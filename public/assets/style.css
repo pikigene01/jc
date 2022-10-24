@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow: hidden;
+}
+.container-fluid {
+  height: 100vh;
+}
+h1 {
+  font-size: 4rem;
+}
+
+.image {
+  margin-bottom: 50px;
+}
+
+.image1 {
+  margin-bottom: 50px;
+}
+.img-fluid {
+  height: 250px;
+  object-fit: cover;
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+#session {
+  width: 100%;
+  padding: 5px 10px;
+  margin-bottom: 3px;
+}
+
+#dream {
+  width: 100%;
+  padding: 5px 10px;
+  margin-bottom: 3px;
+  background-color: lightgray;
+}
+
+#lecture {
+  width: 100%;
+  padding: 5px 10px;
+  margin-bottom: 3px;
+  background-color: lightgray;
+}
+
+#sign {
+  width: 100%;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  background-color: lightgray;
+}
+
+#session{
+    background-color: lightgray;
+}
+
+@media screen and (max-width:999px){
+
+    html,
+    body {
+      overflow: scroll;
+      background-color: rgb(24, 24, 24);
+      
+    }
+    
+}
+
