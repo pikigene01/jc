@@ -13,12 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('adminstrators', function (Blueprint $table) {
+        Schema::create('consultants', function (Blueprint $table) {
             $table->id();
-            $table->text('Admin_Name');
-            $table->text('Admin_LastName');
-            $table->text('Admin_email');
-            $table->text('Admin_password');
+            $table->text('Consultant_Name');
+            $table->text('Consultant_LastName');
+            $table->text('Consultant_email');
+            $table->text('Consultant_password');
+            // $table->foreignId('Specialty_ID')
+            //      ->references('id')->on('specialties')
+            //      ->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -30,7 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-
-        Schema::dropIfExists('adminstrators');
+        Schema::dropIfExists('consultants');
     }
 };

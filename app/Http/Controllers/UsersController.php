@@ -16,7 +16,7 @@ class UsersController extends Controller
    }
     public function getAuth(){
         if (Auth::check()) {
-        return redirect('/welcome')->with('message', 'User is Logged in');
+        return redirect('/session')->with('message', 'User is Logged in');
 
         }else{
         return redirect('/login')->with('message', 'Please Login');
@@ -38,7 +38,7 @@ class UsersController extends Controller
 
         if (Auth::attempt($credentials)) {
             // Authentication passed...
-            return redirect()->intended('/welcome');
+            return redirect()->intended('/');
         }
     }
     public function logout(Request $request)
