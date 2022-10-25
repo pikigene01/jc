@@ -23,6 +23,10 @@ class UsersController extends Controller
         }
     }
 
+    public function consultant(){
+        return view('consultant_landing_page');
+    }
+
      /**
      * Handle an authentication attempt.
      *

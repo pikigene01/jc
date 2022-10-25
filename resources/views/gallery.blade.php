@@ -22,7 +22,7 @@
             <div class="row mt-5 justify-content-between">
                 <div class="col-lg-3">
                     <img src="images/Seer.jpg" alt="" class="img-fluid image1">
-                    <a href="homepage.html"> <button type="submit" class="btn btn-outline-info">back to
+                    <a href="/home"> <button type="submit" class="btn btn-outline-info">back to
                             menu</button></a>
                 </div>
 
@@ -50,7 +50,7 @@
 
                 <div class="col-lg-3">
                     <img src="images/atlantis-658490__340.jpg" alt="" class="img-fluid image">
-                    <a href="psychics.html"> <button type="reset" class="btn btn-outline-info">consultants</button></a>
+                    <a href="/psychics"> <button type="reset" class="btn btn-outline-info">consultants</button></a>
                 </div>
             </div>
             <div class="row">

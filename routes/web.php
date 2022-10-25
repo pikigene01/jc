@@ -16,6 +16,7 @@ use App\Http\Controllers\UsersController;
 */
 
 Route::get('/', [UsersController::class,'getAuth']);
+Route::get('/consultant-landing-page', [UsersController::class,'consultant']);
 Route::post('/logout', [UsersController::class,'logout']);
 Route::post('/register', [UsersController::class,'register']);
 Route::post('/login', [UsersController::class,'authenticate']);
@@ -27,9 +28,13 @@ Route::get('/login', function () {
 Route::get('/session', function () {
     return view('session');
 });
+Route::get('/registration', function () {
+    return view('registration');
+});
 Route::get('/welcome', function () {
     return view('welcome');
 });
+
 Route::get('/register', function () {
     return view('register');
 });

@@ -29,10 +29,13 @@
                 <div class="form-group">
                     <form action="/register" method="post">
                         @csrf
+                        <p style="color: red;">
  @if(session('message'))
   {{session('message')}}
 @endif
-<label for="username">Please enter a valid name</label>
+                        </p>
+<br/>
+<label for="username">Please enter a your name</label>
 <input type="text" id="username" name="username" class="form-control">
 
                         <label for="username">Please enter a valid email</label>
@@ -43,8 +46,10 @@
 
                         <label for="password" class="mt-3">confirm Password</label>
                         <input type="text" id="password" name="confirm_password" class="form-control">
+                        <br>
                         <button type="submit"  class="btn btn-outline-info">Submit</button>
-                        <a href=""> <button type="reset" class="btn btn-outline-info mt-5">Reset</button></a>
+                        <br>
+                         <button type="reset" class="btn btn-outline-info mt-5">Reset</button>
                     </form>
                 </div>
             </div>
