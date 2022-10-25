@@ -31,7 +31,7 @@
              <a href="/testimonial"> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">TESTIMONIALS</button></a>
              <a href="/registration-form"> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">WORKSHOPS</button></a>
              <a href="/search-form"> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">search</button></a>
-             <form method="post" action="/logout"><a href="/search-form"> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">search</button></a></form>
+             <form method="post" action="/logout">@csrf<button type="submit" class="btn btn-info w-100 mb-1 text-uppercase">Logout</button></form>
             </div>
 
             <div class="col-lg-3">
