@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>Log-in</title>
+    <title>Appointments</title>
 </head>
+<style>
+
+</style>
 <body>
 
 <div class="container-fluid text-center bg-dark text-secondary pt-5 text-uppercase">
@@ -18,42 +21,50 @@
             <img src="images/Seer.jpg" alt="" class="img-fluid">
         </div>
 
-        <div class="col-lg-4">
-         <div class="form-group">
-            <form action="/login" method="post">
-                @csrf
-                @if(session('message'))
-                {{session('message')}}
-              @endif
-                <label for="email">Email</label>
-                <input type="email" name="email" id="username" class="form-control">
+        <div class="col-lg-4 d-flex align-items-center justify-content-center">
 
-                <label for="password" class="mt-5">Password</label>
-                <input type="text" name="password" id="password" class="form-control">
+<h1>Appointments</h1>
+<br>
 
 
-             <button type="submit" class="btn btn-outline-info mt-5">LOG IN</button>
-            </form>
-         </div>
         </div>
 
         <div class="col-lg-3">
             <img src="images/atlantis-658490__340.jpg" alt="" class="img-fluid image">
 
-            <a href="/" class="text-info" id="forgot"> <b>FORGOT PASSOWORD?</b></a>
-            <a href="/registration" class="text-info" id="forgot"> <b>Registration?</b></a>
         </div>
     </div>
 
-    <div class="text">
-        <a href="/register" class="text-secondary">New User--Register</a>
-    </div>
     <div class="row">
         <div class="col-lg-12">
             <img src="images/hibou.png" alt="" class="img-fluid h-25">
         </div>
     </div>
+     <div class="col-md-12 d-flex align-items-center justify-content-center">
+        <table >
+            <thead>
+                <th>Consultation Id </th>
+                <th>Customer's Name </th>
+                <th>Last Name </th>
+                <th>Date </th>
+                <th>Time </th>
+                <th>Comments </th>
+                <th>Session Skype </th>
+            </thead>
+            <tbody>
+                <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                </tr>
+            </tbody>
 
+        </table>
+     </div>
 </div>
 
 </body>

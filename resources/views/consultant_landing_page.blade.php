@@ -43,24 +43,27 @@
      <div class="col-md-12 d-flex align-items-center justify-content-center">
         <table >
             <thead>
-                <th>Consultation Id </th>
-                <th>Customer's Name </th>
-                <th>Last Name </th>
-                <th>Date </th>
-                <th>Time </th>
-                <th>Comments </th>
-                <th>Session Skype </th>
+                <th>Appointment Id </th>
+                <th>Date And Time</th>
+                <th>Message</th>
+                <th>Customer Id</th>
+                <th>Consultant Id</th>
+                <th>Admin Id</th>
+                <th>Email </th>
             </thead>
             <tbody>
+                @foreach ($data as $row)
                 <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-                <td>5</td>
-                <td>6</td>
-                <td>7</td>
-                </tr>
+                    <td>{{$row->Appointment_id}}</td>
+                    <td>{{$row->DateTime}}</td>
+                    <td>{{$row->Message}}</td>
+                    <td>{{$row->Costumer_id}}</td>
+                    <td>{{$row->Consultant_id}}</td>
+                    <td>{{$row->Admin_id}}</td>
+                    <td>{{$row->Email}}</td>
+                    </tr>
+                @endforeach
+
             </tbody>
 
         </table>
