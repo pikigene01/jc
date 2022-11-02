@@ -23,8 +23,12 @@
             <form action="/login" method="post">
                 @csrf
                 @if(session('message'))
+                <p style="color: red;">
+
                 {{session('message')}}
+                </p>
               @endif
+              <br/>
                 <label for="email">Email</label>
                 <input type="email" name="email" id="username" class="form-control">
 

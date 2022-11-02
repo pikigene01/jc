@@ -29,46 +29,48 @@
             </div>
 
             <div class="col-lg-4 ">
-                <form action="">
 
-                    <input list="sessions" name="session" id="session">
-                    <datalist id="sessions">
-                        <option value="CONSULTANT 1 TAROT  Price: 75$"></option>
-                        <option value="CONSULTANT 2 HOLISTIC SESSION  Price: 50$"></option>
-                        <option value="CONSULTANT 3 ASTROLOGY LECTURE   Price: 75$"></option>
-                        <option value="CONSULTANT 4 SCRYING BALL LECTURE   Price: 60$"></option>
-                        <option value="WORKSHOPS   Price: 250$"></option>
-                    </datalist>
-                </form>
+                    {{-- <input list="sessions" name="session" id="session"> --}}
+
+                    <form method="post" action="/consultations">
+                        @csrf
+
                 <!-- <a href=""> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">SESSION
                         REGISTRATION</button></a> -->
-                <a href=""> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">ENTER YOUR
-                        NAME</button></a>
+                        <select name="selected_specialty" id="sessions">
+                            <option value="CONSULTANT 1 TAROT  Price: 75$">CONSULTANT 1 TAROT  Price: 75$</option>
+                            <option value="CONSULTANT 2 HOLISTIC SESSION  Price: 50$">CONSULTANT 2 HOLISTIC SESSION  Price: 50$</option>
+                            <option value="CONSULTANT 3 ASTROLOGY LECTURE   Price: 75$">CONSULTANT 3 ASTROLOGY LECTURE   Price: 75$</option>
+                            <option value="CONSULTANT 4 SCRYING BALL LECTURE   Price: 60$">"CONSULTANT 4 SCRYING BALL LECTURE   Price: 60$</option>
+                            <option value="WORKSHOPS   Price: 250$">WORKSHOPS   Price: 250$</option>
+                        </select>
+             <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">ENTER YOUR
+                        NAME</button>
 
-                <input type="text" class="form-control mb-1">
+                <input name="name" type="text" class="form-control mb-1">
 
-                <a href=""> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">ENTER YOUR LAST
-                        NAME</button></a>
+             <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">ENTER YOUR LAST
+                        NAME</button>
 
-                <input type="text" class="form-control mb-1">
+                <input name="last_name" type="text" class="form-control mb-1">
 
-                <a href=""> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">ENTER YOUR EMAIL
-            </button></a>
+             <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">ENTER YOUR EMAIL
+            </button>
 
-                <input type="email" class="form-control mb-1">
+                <input name="email" type="email" class="form-control mb-1">
 
-                <a href=""> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase"> DATE AND TIME FOR
-                        CONSULTATION </button></a>
+             <button type="button" class="btn btn-info w-100 mb-1 text-uppercase"> DATE AND TIME FOR
+                        CONSULTATION </button>
 
-                <input type="datetime-local" class="form-control mb-1">
+                <input name="date" type="datetime-local" class="form-control mb-1">
 
-                <a href=""> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">WRITE A BRIEF
-                        MESSAGE</button></a>
+             <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">WRITE A BRIEF
+                        MESSAGE</button>
 
-                <form action="">
-                    <input type="text" class="form-control mb-1">
-                    <a href="">
-                        <button type="submit" class="btn btn-info w-100 mb-1 text-uppercase">submit</button></a>
+
+                    <input name="message" type="text" class="form-control mb-1">
+
+                        <button type="submit" class="btn btn-info w-100 mb-1 text-uppercase">submit</button>
                 </form>
 
             </div>

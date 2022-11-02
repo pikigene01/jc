@@ -18,9 +18,11 @@ use App\Http\Controllers\UsersController;
 Route::get('/', [UsersController::class,'getAuth']);
 Route::get('/consultant-landing-page', [UsersController::class,'consultant']);
 Route::get('/admistration-landing-page', [UsersController::class,'adminstrator']);
+Route::get('/customer-landing-page', [UsersController::class,'customer']);
 Route::post('/logout', [UsersController::class,'logout']);
 Route::post('/register', [UsersController::class,'register']);
 Route::post('/login', [UsersController::class,'authenticate']);
+Route::post('/consultations', [UsersController::class,'consultations']);
 Route::get('/home', [UsersController::class,'index']);
 
 Route::get('/login', function () {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Adminstrations;
 use App\Models\Adminstrator;
 use App\Models\Consultant;
 use App\Models\Consultation;
@@ -29,13 +30,25 @@ class UsersController extends Controller
     }
 
     public function consultant(){
-        $consultation = Consultation::get();
+        $consultation = Consultant::get();
 
         return view('consultant_landing_page',[
             'data' => $consultation]);
+
     }
     public function adminstrator(){
-        return view('adminstrator_landing_page');
+        $consultation = Consultation::get();
+
+        return view('adminstrator_landing_page', [
+            'data'=> $consultation
+        ]);
+    }
+    public function customer(){
+        $consultation = Consultation::get();
+
+        return view('customer_landing_page', [
+            'data'=> $consultation
+        ]);
     }
 
      /**
@@ -45,14 +58,48 @@ class UsersController extends Controller
      *
      * @return Response
      */
+    public function consultations(Request $request)
+    {
+
+        $validator = Validator::make(
+            $request->all(),
+            [
+                //no neeed to validate customer id and name since they are coming from auth session
+                'message' => 'required|min:3',
+                'email' => 'required|min:6',
+                'date' => 'required|min:6',
+                'selected_specialty'=> 'required',
+            ]
+        );
+
+
+        if ($validator->fails()) {
+            $messages = $validator->messages();
+            return redirect('/consultation-landing-page')->with('message', $messages);
+        }else{
+        $consultation = new Consultation();
+
+        $consultation->Email =$request->email;
+        $consultation->DateTime =$request->date;
+        // $consultation->Admin_id =Auth::id();
+        // $consultation->Consultant_id =Auth::id();
+        // $consultation->Customer_id =Auth::id();
+        $consultation->Message =$request->message;
+        $consultation->Time =$request->date;
+        $consultation->save();
+        $consultation_data = Consultation::get();
+        return redirect('/customer-landing-page')->with(['data'=>$consultation_data]);
+
+        }
+
+    }
     public function authenticate(Request $request)
     {
 
         $credentials = $request->only('email', 'password');
         $check_user_customer = Customer::where('Customer_email', $request->email)->get();
-        $check_user_consultant= Consultant::where('Customer_email', $request->email)->get();
-        $check_user_adminstrator = Adminstrator::where('Customer_email', $request->email)->get();
-
+        $check_user_consultant= Consultation::where('Email', $request->email)->get();
+        // $check_user_adminstrator = Adminstrations::where('Admin_email', $request->email)->get();
 
         if (Auth::attempt($credentials)) {
             // Authentication passed...
