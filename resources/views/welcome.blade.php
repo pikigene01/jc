@@ -26,11 +26,11 @@
              <a href="/about"> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">about us</button></a>
              <a href="/contact"> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">contact us</button></a>
              <a href="/gallery"> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">gallery</button></a>
-             <a href="/psychics"> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">CONSULTANTS</button></a>
+             <a href="/login"> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">CONSULTANTS</button></a>
              <a href="/consultant"> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">specialties            </button></a>
              <a href="/testimonial"> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">TESTIMONIALS</button></a>
-             <a href="/registration-form"> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">WORKSHOPS</button></a>
-             <a href="/search-form"> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">search</button></a>
+             <a href="/login"> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">WORKSHOPS</button></a>
+             <a href="/login"> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">search</button></a>
              <form method="post" action="/logout">
                 @csrf
                 <button type="submit" class="btn btn-info w-100 mb-1 text-uppercase">Logout</button></form>
