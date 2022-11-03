@@ -41,7 +41,7 @@
         </div>
     </div>
      <div class="col-md-12 d-flex align-items-center justify-content-center">
-        <table >
+        <table style="margin-bottom: 80vh" >
             <thead>
                 <th>Consultant id</th>
                 <th>Consultant Name</th>
@@ -49,6 +49,7 @@
                 <th>Customer Id</th>
                 <th>Consultant Id</th>
                 <th>Consultant Email </th>
+                <th>Edit </th>
             </thead>
             <tbody>
                 @foreach ($data as $row)
@@ -59,12 +60,14 @@
                     <td>{{$row->Costumer_id}}</td>
                     <td>{{$row->Consultant_id}}</td>
                     <td>{{$row->Consultant_email}}</td>
+                    <td><a href="/edit/{{ $row->Consultant_id  }}">Edit</a></td>
                     </tr>
                 @endforeach
 
             </tbody>
 
         </table>
+
      </div>
 </div>
 

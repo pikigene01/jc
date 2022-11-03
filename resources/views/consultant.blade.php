@@ -23,13 +23,13 @@
             </div>
 
             <div class="col-lg-4 ">
-             <a href="registration-form.html"> <button type="button" class="btn btn-info w-100 mb-3 py-3 text-uppercase"> specialties
+             <a href="/login"> <button type="button" class="btn btn-info w-100 mb-3 py-3 text-uppercase"> specialties
                 :</button></a>
-             <a href="registration-form.html"> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">TAROT</button></a>
-             <a href="registration-form.html"> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">HOLISTIC SESSION</button></a>
-             <a href="registration-form.html"> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">ASTROLOGY LECTURE</button></a>
-             <a href="registration-form.html"> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">SCRYING BALL LECTURE</button></a>
-             <a href="registration-form.html"> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">WORKSHOPS</button></a>
+             <a href="/login"> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">TAROT</button></a>
+             <a href="/login"> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">HOLISTIC SESSION</button></a>
+             <a href="/login"> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">ASTROLOGY LECTURE</button></a>
+             <a href="/login"> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">SCRYING BALL LECTURE</button></a>
+             <a href="/login"> <button type="button" class="btn btn-info w-100 mb-1 text-uppercase">WORKSHOPS</button></a>
             </div>
 
             <div class="col-lg-3">

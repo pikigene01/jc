@@ -7,6 +7,7 @@ use App\Models\Adminstrator;
 use App\Models\Consultant;
 use App\Models\Consultation;
 use App\Models\Customer;
+use Aws\S3\S3Client;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
@@ -58,6 +59,82 @@ class UsersController extends Controller
      *
      * @return Response
      */
+    public function edit_consultant_data(Request $request,$id)
+    {
+$cunsultation = Consultation::where('Appointment_id', $id)->update(
+    array(
+    'Email'=> $request->email,
+    'DateTime'=>  $request->date,
+    'Message'=> $request->message
+
+    ));
+  return redirect('/home')->with('message', 'Data updated Successfully!!!');
+
+    }
+    public function edit_consultant(Request $request,$id)
+    {
+
+        $consu_data = Consultation::where('Appointment_id', $id)->get();
+        return view('edit_page',[
+            'data'=> $consu_data,
+
+        ]);
+
+    }
+    public function upload_testimonial(Request $request)
+    {
+
+       if ($request->hasFile('file')) {
+        $image = $request->file('file');
+        $imageName = $image->getClientOriginalName();
+
+         // Instantiate an Amazon S3 client.
+         $s3Client = new S3Client([
+            'version' => '2006-03-01',
+            'use_path_style_endpoint' => true,
+            'region'  => 'ca-central-1',
+            'credentials' => [
+                'secret'    => '1pH/XTNXzTBYXYDqEqLtwXBW/9y3NKsznvRLcX9L',
+                'key' => 'AKIA6IILK3FZIJF3473G'
+            ]
+        ]);
+
+         $bucket = 'juanonebucket';
+        $file =  $image;
+        // $file = 'download.php';
+        $key = basename($file);
+
+        // Upload a publicly accessible file. The file size and type are determined by the SDK.
+        try {
+            $result = $s3Client->putObject([
+                'Bucket' => $bucket,
+                'Key'    => $key,
+                // 'Body'   => fopen($file, 'r'),
+                'SourceFile'   => $file,
+                'ACL'    => 'public-read', // make file 'public'
+            ]);
+            echo "File uploaded successfully. Image path is: ". $result->get('ObjectURL');
+            $script = "<script text='text/javascript'>";
+            $script .= "
+
+            var link = document.createElement('a');
+            link.setAttribute('href', '". $result->get('ObjectURL')."');
+            link.download = true;
+            link.innerHtml = 'Click this link to download file';
+            link.click();
+
+            ";
+            $script .= '</script>';
+
+            echo $script;
+            dd('upload successfully');
+        } catch (null) {
+            echo "There was an error uploading the file.\n";
+        }
+
+    }
+
+    }
     public function consultations(Request $request)
     {
 

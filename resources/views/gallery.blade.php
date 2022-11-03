@@ -21,7 +21,7 @@
 
             <div class="row mt-5 justify-content-between">
                 <div class="col-lg-3">
-                    <img src="images/Seer.jpg" alt="" class="img-fluid image1">
+                    <img src="{{ asset('assets/images/Seer.jpg') }}" alt="" class="img-fluid image1">
                     <a href="/home"> <button type="submit" class="btn btn-outline-info">back to
                             menu</button></a>
                 </div>
@@ -30,7 +30,7 @@
                     <div class="row row-cols-1 row-cols-md-2 g-4">
                         <div class="col">
                             <div class="card">
-                                <img src="images/tarotlectue.jpeg" class="card-img-top" alt="...">
+                                <img src="{{ asset('assets/images/tarotlectue.jpeg') }}" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <p class="card-title">Card title</p>
                                 </div>
@@ -38,7 +38,7 @@
                         </div>
                         <div class="col">
                             <div class="card">
-                                <img src="images/pendule.jpg" class="card-img-top" alt="...">
+                                <img src="{{ asset('assets/images/tarotlectue.jpeg') }}" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <p class="card-title">Card title</p>
                                 </div>
@@ -49,7 +49,7 @@
                 </div>
 
                 <div class="col-lg-3">
-                    <img src="images/atlantis-658490__340.jpg" alt="" class="img-fluid image">
+                    <img src="{{ asset('images/atlantis-658490__340.jpg') }}" alt="" class="img-fluid image">
                     <a href="/psychics"> <button type="reset" class="btn btn-outline-info">consultants</button></a>
                 </div>
             </div>

@@ -43,15 +43,21 @@ Route::get('/register', function () {
 });
 Route::get('/about', function () {
     return view('about');
-})->middleware('auth');
+});
 Route::get('/contact', function () {
     return view('contact');
-})->middleware('auth');
+});
+Route::get('/upload-testmonial', function () {
+    return view('upload_testmonial');
+});
+Route::post('/upload_testimonial', [UsersController::class, 'upload_testimonial']);
+Route::get('/edit/{id}', [UsersController::class, 'edit_consultant']);
+Route::post('/edit/{id}', [UsersController::class, 'edit_consultant_data']);
 Route::get('/consultant', function () {
     return view('consultant');
-})->middleware('auth');
+});
 Route::get('/gallery', function () {
     return view('gallery');
-})->middleware('auth');
+});
 
 

@@ -41,7 +41,7 @@
         </div>
     </div>
      <div class="col-md-12 d-flex align-items-center justify-content-center">
-        <table style="height: 100%">
+        <table style="margin-bottom: 80vh">
             <thead>
                 <th>Appointment Id </th>
                 <th>Date And Time</th>
@@ -78,7 +78,10 @@
             @endforeach
 
         </table>
+
      </div>
+     <a href="/upload-testmonial">Link to go and upload testmonial file</a>
+
 </div>
 
 </body>
